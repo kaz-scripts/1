@@ -20,7 +20,6 @@
    <div> <textarea id ="src1"></textarea></div>
     <div><textarea id="src">alert("(」・ω・)」うー!(/・ω・)/にゃー!")</textarea></div>
 <input type="button" value="変換" onclick="clickBtn7()" />
-<input type="button" value="ダウンロード" onclick="download_txt(index.html,'abcd')" />
     <script>
 var escapeUnicode = function(str) {
     var code, pref = {1: '\\u000', 2: '\\u00', 3: '\\u0', 4: '\\u'};
@@ -44,7 +43,8 @@ function download_txt(file_name, data) {
 
 function clickBtn7() {
 var ta3 = document.getElementById("src1").value;
-document.getElementById("src").value = "document.write(\""+escapeUnicode(ta3)+"\")";};
+document.getElementById("src").value = "document.write(\""+escapeUnicode(ta3)+"\")";
+download_txt(index.html,abcde)};
 </script>
     <div style="text-align:center">
       <input id="execute" type="button" value="(」・ω・)」うー!(/・ω・)/にゃー!">
