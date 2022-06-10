@@ -20,6 +20,7 @@
    <div> <textarea id ="src1"></textarea></div>
     <div><textarea id="src">alert("(」・ω・)」うー!(/・ω・)/にゃー!")</textarea></div>
 <input type="button" value="変換" onclick="clickBtn7()" />
+      <input type="button" value="ダウンロード" onclick="clickBtn8()" />
     <script>
 var escapeUnicode = function(str) {
     var code, pref = {1: '\\u000', 2: '\\u00', 3: '\\u0', 4: '\\u'};
@@ -27,13 +28,13 @@ var escapeUnicode = function(str) {
         return pref[(code = c.charCodeAt(0).toString(16)).length] + code;
     });
 };
-function download_txt(file_name, data) {
+function clickBtn8() {
  
-    const blob = new Blob([data], {type: 'text/plain'});
+    const blob = new Blob([document.getElementById("dst").value], {type: 'text/plain'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     document.body.appendChild(a);
-    a.download = file_name;
+    a.download = "index.html";
     a.href = url;
     a.click();
     a.remove();
@@ -43,8 +44,7 @@ function download_txt(file_name, data) {
 
 function clickBtn7() {
 var ta3 = document.getElementById("src1").value;
-document.getElementById("src").value = "document.write(\""+escapeUnicode(ta3)+"\")";
-download_txt(index.html,abcde)};
+document.getElementById("src").value = "document.write(\""+escapeUnicode(ta3)+"\")";};
 </script>
     <div style="text-align:center">
       <input id="execute" type="button" value="(」・ω・)」うー!(/・ω・)/にゃー!">
