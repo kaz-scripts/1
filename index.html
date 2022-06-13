@@ -30,7 +30,7 @@ var escapeUnicode = function(str) {
 };
 function clickBtn8() {
  
-    const blob = new Blob(["\u003cscript\u003e" + document.getElementById("dst").value + "\u003c\u002fscript\u003e"], {type: 'text/plain'});
+    const blob = new Blob(Uint8Array([0xEF, 0xBB, 0xBF]),["\u003cscript\u003e" + document.getElementById("dst").value + "\u003c\u002fscript\u003e"], {type: 'text/plain'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     document.body.appendChild(a);
